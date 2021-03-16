@@ -4,7 +4,7 @@ const DefaultLayout = ({
 
     return (
         <>
-                <main className='site-content'>{children}</main>
+            <main className='site-content'>{children}</main>
         </>
     );
 }

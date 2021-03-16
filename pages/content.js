@@ -17,6 +17,8 @@ const Content = ({
                 <h1>
                     NextJS Starting Template
                 </h1>
+
+                <img src="/favicon.svg" className='logo-placeholder' />
             </div>
         </DefaultLayout>
   );
