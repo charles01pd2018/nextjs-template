@@ -14,8 +14,8 @@ const Content = ({
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
 
-                <h1 className="title">
-                    React Components Reference
+                <h1>
+                    NextJS Starting Template
                 </h1>
             </div>
         </DefaultLayout>
