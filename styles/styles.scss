@@ -1,4 +1,10 @@
-// global styles
-@import "base", "globals";
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+$breakpoint--large:                 1025px;     // anything under is a tablet screen   
+$breakpoint--medium:                800px;      // anything under is a mobile screen
 
-// components
+/*--------------------------------------------------------------
+# Global
+--------------------------------------------------------------*/
+@import "base", "globals";

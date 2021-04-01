@@ -2,7 +2,7 @@
 import Head from 'next/head';
 
 // pages
-import DefaultLayout from './layout/defaultLayout';
+import DefaultLayout from '../layout/defaultLayout';
 
 const Content = ({
 }) => {
