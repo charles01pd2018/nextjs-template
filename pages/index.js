@@ -1,11 +1,14 @@
 // pages
-import Content from './content';
+import Home from './home';
 
-const Home = ({
+// layout
+import DefaultLayout from '../layout/defaultLayout';
+
+export default ({
 }) => {
   return (
-    <Content />
+    <DefaultLayout>
+      <Home />  
+    </DefaultLayout>
   );
 }
-
-export default Home;

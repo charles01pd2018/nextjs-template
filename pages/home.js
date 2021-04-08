@@ -1,13 +1,10 @@
 // dependencies
 import Head from 'next/head';
 
-// pages
-import DefaultLayout from '../layout/defaultLayout';
-
-const Content = ({
+const Home = ({
 }) => {
   return (
-        <DefaultLayout>
+        <>
             <div className="container">
                 <Head>
                     <title>React Components Template</title>
@@ -18,10 +15,10 @@ const Content = ({
                     NextJS Starting Template
                 </h1>
 
-                <img src="/favicon.svg" className='logo-placeholder' />
+                <img className='logo-placeholder' src="/favicon.svg" alt='site-logo' />
             </div>
-        </DefaultLayout>
+        </>
   );
 }
 
-export default Content;
+export default Home;
