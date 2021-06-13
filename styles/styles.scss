@@ -1,10 +1,25 @@
 /*--------------------------------------------------------------
-# Variables
+# Base
+    THIS IMPORT HAS TO GO FIRST SINCE IT CONTAINS VARIABLES USED BY OTHER STYLE SHEETS
+    *DO NOT CHANGE* *DO NOT CHANGE* *DO NOT CHANGE* *DO NOT CHANGE*
 --------------------------------------------------------------*/
-$breakpoint--large:                 1025px;     // anything under is a tablet screen   
-$breakpoint--medium:                800px;      // anything under is a mobile screen
+@import './base/spacing', './base/colors';
 
 /*--------------------------------------------------------------
 # Global
 --------------------------------------------------------------*/
-@import "base", "globals";
+@import 'globals';
+
+/*--------------------------------------------------------------
+# Branding
+--------------------------------------------------------------*/
+@import './branding/typography';
+
+/*--------------------------------------------------------------
+# Custom
+--------------------------------------------------------------*/
+@import './custom/scrollbar', 'custom/textHighlight';
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/

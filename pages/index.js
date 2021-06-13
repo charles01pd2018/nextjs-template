@@ -11,7 +11,6 @@ const Home = ({
       <div className="container">
         <Head>
             <title>React Components Template</title>
-            <link rel="icon" href="/favicon.ico" />
         </Head>
 
         <h1>
