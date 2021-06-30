@@ -2,7 +2,7 @@
 import Head from 'next/head';
 
 // layout
-import DefaultLayout from '../layout/defaultLayout';
+import { DefaultLayout } from '../layout';
 
 const Home = ({
 }) => {
