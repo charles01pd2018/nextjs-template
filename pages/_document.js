@@ -15,7 +15,7 @@ class MyDocument extends Document {
         <Head >
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <body>
+        <body className='loading'>
           <Main />
           <NextScript />
         </body>
