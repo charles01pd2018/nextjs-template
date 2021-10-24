@@ -9,7 +9,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "classnames": "^2.3.1",
     "next": "10.0.8",
     "node-sass": "^5.0.0",
     "react": "17.0.1",
