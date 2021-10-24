@@ -2,8 +2,9 @@
 # Variables
 --------------------------------------------------------------*/
 $scrollbar--width:                  0.8rem;
-$scrollbar--color:                  $green-2;
+$scrollbar-thumb--color:            $green-2;
 $scrollbar--background-color:       $green-1;
+$scroll-bar-thumb--border-radius:   20px;
 
 /*--------------------------------------------------------------
 # Styling
@@ -12,13 +13,15 @@ $scrollbar--background-color:       $green-1;
 --------------------------------------------------------------*/
 /* CHROME, EDGE, SAFARI */
 ::-webkit-scrollbar {
-    width: $scrollbar--width;
+    width: $scrollbar--width; // width of the ENTIRE scrollbar - including thumb
 }
 
 ::-webkit-scrollbar-track {
-    background: $scrollbar--background-color;
+    background: $scrollbar--background-color; // background color of the scroll bar
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: $scrollbar--color;
+    background-color: $scrollbar-thumb--color; // color of the scroll thumb
+    border-radius: $scroll-bar-thumb--border-radius; // roundness of the scroll thumb
+    // border: 1px solid orange; // border of the scroll thumb
 }
