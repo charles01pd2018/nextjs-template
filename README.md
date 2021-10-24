@@ -1,2 +1,2 @@
-# next.js template
+# nextjs template
 Next.js Starting Template
