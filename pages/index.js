@@ -1,26 +1,45 @@
 // dependencies
 import Head from 'next/head';
-
 // layout
 import { DefaultLayout } from '../layout';
+// components
+import { Hello } from 'components';
+
 
 const Home = ({
+  content: {
+    pageTitle,
+    helloContent,
+  }
 }) => {
   return (
-    <DefaultLayout>
-      <div className="container">
-        <Head>
-            <title>React Components Template</title>
-        </Head>
+    <>
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
 
-        <h1>
-            NextJS Starting Template
-        </h1>
-
-        <img className='logo-placeholder' src="/favicon.svg" alt='site-logo' />
-      </div>
-    </DefaultLayout>
+        <DefaultLayout>
+          <Hello id='hello-component' content={helloContent} />
+        </DefaultLayout>
+    </>
+  
   );
+}
+
+const HomeContent = {
+  pageTitle: 'Next.JS Starting Template',
+  // Component Content
+  helloContent: {
+    text: 'Welcome!'
+  }
+};
+
+export async function getStaticProps() {
+  return {
+    props: {
+      content: HomeContent,
+    }
+  }
 }
 
 export default Home;

@@ -4,12 +4,13 @@
 html,
 body {
   margin: 0;
-  font-family: Verdana; 
-  scroll-behavior: smooth;
+  // ADD FONT HERE
+  font-family: $font-name, Verdana; // variables defined in './branding/typography'
+  // scroll-behavior: smooth;
 }
 
 main.site-content {
-  text-align: center;
+  // text-align: center;
 }
 
 /*--------------------------------------------------------------
