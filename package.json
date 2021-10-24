@@ -2,7 +2,7 @@
   "name": "nextjs-starting-template",
   "description": "This is going to be the greatest app ever!!!",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
