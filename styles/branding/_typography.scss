@@ -50,14 +50,14 @@ $font-sizing-map: (
 /*--------------------------------------------------------------
 # CUSTOM FONTS - Font Family
 --------------------------------------------------------------*/
-@each $font-name, $font-style in $fontList {
-    @font-face {
-        font-family: $font;
-        src: url( '/static/fonts/#{$font-name}/#{$font-name}--#{$font-style}.ttf' );
-        font-style: $font-style;
-        font-display: swap;
-    }
-}
+// @each $font-name, $font-style in $fontList {
+//     @font-face {
+//         font-family: $font;
+//         src: url( '/static/fonts/#{$font-name}/#{$font-name}--#{$font-style}.ttf' );
+//         font-style: $font-style;
+//         font-display: swap;
+//     }
+// }
 
 /*--------------------------------------------------------------
 # Helper
