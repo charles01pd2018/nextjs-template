@@ -1,18 +1,6 @@
-/*--------------------------------------------------------------
-# Variables
---------------------------------------------------------------*/
-// $font-name:     'YOUR_FONT_NAME'; uncomment to enable custom fonts
-
-/*--------------------------------------------------------------
-# CUSTOM FONTS - Font Family
---------------------------------------------------------------*/
-// uncomment to enable custom fonts
-// @font-face {
-//     font-family: $font-name;
-//     src: url( '/static/fonts/PATH_TO_YOUR_FONT' );
-//     font-style: normal;
-//     font-display: swap;
-// }
+// constants 
+@use '../constants/breakpoints' as *;
+@use '../constants/fontStyles' as fontList;
 
 /*--------------------------------------------------------------
 # Variables
@@ -56,6 +44,18 @@ $font-sizing-map: (
         #{$font-type} {
             font-size: $font-size * $font-scale--mobile;
         }
+    }
+}
+
+/*--------------------------------------------------------------
+# CUSTOM FONTS - Font Family
+--------------------------------------------------------------*/
+@each $font-name, $font-style in $fontList {
+    @font-face {
+        font-family: $font;
+        src: url( '/static/fonts/#{$font-name}/#{$font-name}--#{$font-style}.ttf' );
+        font-style: $font-style;
+        font-display: swap;
     }
 }
 
