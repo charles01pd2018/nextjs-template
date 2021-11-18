@@ -22,6 +22,7 @@
         "@utils/*": ["utils/*"],
         "@types/*": ["types/*"],
         "@lib/*": ["lib/*"],
+        "@elements/*": ["elements/*"],
       }
     },
     "include": ["next-env.d.ts", "**/*.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
