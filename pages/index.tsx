@@ -5,13 +5,25 @@ import { DefaultLayout } from 'layout';
 // components
 import { Hello } from 'components';
 
+/* TYPES */
+interface Content {
+  pageTitle: string;
+  helloContent: {
+    text: string;
+  }
+};
 
-const Home = ({
+interface Props {
+  content: Content;
+};
+
+const Home = ( {
   content: {
     pageTitle,
-    helloContent,
-  }
-}) => {
+    helloContent
+  },
+}: Props ) => {
+
   return (
     <>
       <Head>
