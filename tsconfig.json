@@ -14,6 +14,7 @@
       "isolatedModules": true,
       "jsx": "preserve",
       "incremental": true,
+      "skipLibCheck": true,
       "paths": {
         "@components/*": ["components/*"],
         "@layout/*": ["layout/*"],
