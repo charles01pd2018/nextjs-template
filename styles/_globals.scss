@@ -7,8 +7,7 @@
 html,
 body {
   margin: 0;
-  // ADD FONT HERE - add $main-font in front of Verdana to enable custom fonts
-  // font-family: $main-font;
+  // font-family: $main-font, Verdana;
   font-family: Verdana; // variables defined in './branding/typography'
   // scroll-behavior: smooth;
 }

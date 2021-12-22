@@ -1,5 +1,9 @@
-import Hello from './hello';
+import Headers from './headers';
+import Paragraphs from './paragraphs';
+import Container from './container';
 
 export {
-    Hello,
+    Headers,
+    Paragraphs,
+    Container,
 }

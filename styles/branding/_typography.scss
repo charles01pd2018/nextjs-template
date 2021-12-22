@@ -1,61 +1,75 @@
-// constants 
-@use '../constants/breakpoints' as *;
-@use '../constants/fontStyles' as fontList;
+// dependencies
+@use 'sass:list';
+// constants
+@use '../constants/fontStyles' as *;
 
 /*--------------------------------------------------------------
 # Variables
 --------------------------------------------------------------*/
-$font-scale--tablet:                0.95;
-$font-scale--mobile:                0.9;
+$h1-size: ( 2.6em, 3.3vw, 3.3em );
+$header-tags: ( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' );
+$header-scale: 0.95; // how much each subsequent header will decrease in size
 
-$font-sizing-map: (
-    "h1":               3em,
-    "h2":               2.4em,
-    "h3":               1.8em,
-    "h4":               1.4em,
-    "p":                1.2em,
-    ".text-norm":       1.2em,
-    ".text-sm":         1em,
-    ".text-xs":         0.9em,
-    ".text-xxs":        0.8em,
-);
+$paragraph-size: ( 1.02em, 1.27vw, 1.21em );
+$text-classnames: ( 'text-norm', 'text-sm', 'text-xs', 'text-xxs' );
+$text-scale: 0.95; // how much each subsequent text classname will decrease in size
 
 /*--------------------------------------------------------------
 # Styling
 --------------------------------------------------------------*/
-@each $font-type, $font-size in $font-sizing-map {
-    #{$font-type} {
-        font-size: $font-size;
+// headers
+$header-size: $h1-size;
+@each $header-tag in $header-tags {
+    $min: list.nth( $header-size, 1 );
+    $default: list.nth( $header-size, 2 );
+    $max: list.nth( $header-size, 3 );
+    
+    #{$header-tag} {
+        font-size: clamp( $min, $default, $max );
     }
+
+    $header-size: (
+        $min * $header-scale,
+        $default * $header-scale,
+        $max * $header-scale,
+    );
 }
 
-/* BREAKPOINT LARGE */
-@media(max-width: $breakpoint--large) {
-    @each $font-type, $font-size in $font-sizing-map {
-        #{$font-type} {
-            font-size: $font-size * $font-scale--tablet;
-        }
-    }
+// paragraphs
+p {
+    $min: list.nth( $paragraph-size, 1 );
+    $default: list.nth( $paragraph-size, 2 );
+    $max: list.nth( $paragraph-size, 3 );
+
+    font-size: clamp( $min, $default, $max );
 }
 
-/* BREAKPOINT MEDIUM */
-@media(max-width: $breakpoint--medium) {
-    @each $font-type, $font-size in $font-sizing-map {
-        #{$font-type} {
-            font-size: $font-size * $font-scale--mobile;
-        }
+$text-size: $paragraph-size;
+@each $text-class in $text-classnames {
+    $min: list.nth( $text-size, 1 );
+    $default: list.nth( $text-size, 2 );
+    $max: list.nth( $text-size, 3 );
+    
+    .#{$text-class} {
+        font-size: clamp( $min, $default, $max );
     }
+
+    $text-size: (
+        $min * $text-scale,
+        $default * $text-scale,
+        $max * $text-scale,
+    );
 }
 
 /*--------------------------------------------------------------
 # CUSTOM FONTS - Font Family
 --------------------------------------------------------------*/
-// @each $font-name, $font-style in $fontList {
+// @each $font-name, $font-style in $font-names {
 //     @font-face {
-//         font-family: $font;
-//         src: url( '/static/fonts/#{$font-name}/#{$font-name}--#{$font-style}.ttf' );
-//         font-style: $font-style;
-//         font-display: swap;
+//         font-family: $font-name;
+//         src: url('/static/fonts/#{$font-name}/#{$font-name}-#{$font-style}.ttf');
+//         font-style: normal;
+//         font-display: block;
 //     }
 // }
 

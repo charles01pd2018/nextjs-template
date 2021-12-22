@@ -3,14 +3,17 @@ import Head from 'next/head';
 // layout
 import { DefaultLayout } from 'layout';
 // components
-import { Hello } from 'components';
+import { Headers, Paragraphs, Container } from 'components';
 
 /* TYPES */
 interface Content {
   pageTitle: string;
-  helloContent: {
+  headersContent: {
     text: string;
-  }
+  },
+  paragraphsContent: {
+    text: string;
+  },
 };
 
 interface Props {
@@ -20,7 +23,8 @@ interface Props {
 const Home = ( {
   content: {
     pageTitle,
-    helloContent
+    headersContent,
+    paragraphsContent,
   },
 }: Props ) => {
 
@@ -31,7 +35,12 @@ const Home = ( {
       </Head>
 
         <DefaultLayout>
-          <Hello id='hello-component' content={helloContent} />
+          <Container id='header-container'>
+            <Headers id='headers-component' content={headersContent} />
+          </Container>
+          <Container id='paragraphs-container' className='paragraphs-container'>
+            <Paragraphs id='paragraphs-component' content={paragraphsContent} />
+          </Container>
         </DefaultLayout>
     </>
   
@@ -41,8 +50,11 @@ const Home = ( {
 const HomeContent = {
   pageTitle: 'Next.JS Starting Template',
   // Component Content
-  helloContent: {
+  headersContent: {
     text: 'Welcome!'
+  },
+  paragraphsContent: {
+    text: 'Paragraph',
   }
 };
 
