@@ -24,8 +24,13 @@ $header-size: $h1-size;
     $default: list.nth( $header-size, 2 );
     $max: list.nth( $header-size, 3 );
     
+    $font-size: clamp( $min, $default, $max );
     #{$header-tag} {
-        font-size: clamp( $min, $default, $max );
+        font-size: $font-size;
+    }
+
+    .#{$header-tag} {
+        font-size: $font-size;
     }
 
     $header-size: (
