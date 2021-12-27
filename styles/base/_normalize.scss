@@ -51,6 +51,13 @@ label {
     cursor: pointer;
 }
 
+input,
+textarea {
+    &:focus {
+        outline: none;
+    }
+}
+
 input[ type='search' ],
 input[ type='checkbox' ],
 input[ type='radio' ],
