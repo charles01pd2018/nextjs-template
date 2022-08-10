@@ -33,6 +33,11 @@ button {
     }
 }
 
+abbr {
+    border: none;
+    text-decoration: none;
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -52,11 +57,15 @@ label {
     cursor: pointer;
 }
 
-input,
-textarea {
+input {
     &:focus {
         outline: none;
     }
+}
+
+fieldset,
+legend {
+    padding: 0;
 }
 
 input[ type='search' ],
