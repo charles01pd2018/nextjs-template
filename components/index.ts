@@ -1,9 +1,3 @@
-import Headers from './headers';
-import Paragraphs from './paragraphs';
-import Container from './container';
-
-export {
-    Headers,
-    Paragraphs,
-    Container,
-}
+export * from './headings';
+export * from './paragraphs';
+export * from './container';

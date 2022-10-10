@@ -3,17 +3,17 @@ import Head from 'next/head';
 // layout
 import { DefaultLayout } from 'layout';
 // components
-import { Headers, Paragraphs, Container } from 'components';
+import { Headings, Paragraphs, Container } from 'components';
+// types
+import type { HeadingsContent, ParagraphsContent } from 'components/types';
+import type { GetStaticProps } from 'next';
+
 
 /* TYPES */
 interface Content {
   pageTitle: string;
-  headersContent: {
-    text: string;
-  },
-  paragraphsContent: {
-    text: string;
-  },
+  headingsContent: HeadingsContent
+  paragraphsContent: ParagraphsContent;
 };
 
 interface Props {
@@ -21,36 +21,34 @@ interface Props {
 };
 
 const Home = ( {
-  content: {
-    pageTitle,
-    headersContent,
-    paragraphsContent,
-  },
+  content,
 }: Props ) => {
+  /* CONTENT */
+  const { pageTitle,
+    headingsContent,
+    paragraphsContent } = content;
 
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
       </Head>
-
-        <DefaultLayout>
-          <Container id='header-container'>
-            <Headers id='headers-component' content={headersContent} />
-          </Container>
-          <Container id='paragraphs-container' className='paragraphs-container'>
-            <Paragraphs id='paragraphs-component' content={paragraphsContent} />
-          </Container>
-        </DefaultLayout>
+      <DefaultLayout>
+        <Container id='header-container'>
+          <Headings id='headings-component' content={headingsContent} />
+        </Container>
+        <Container id='paragraphs-container' className='paragraphs-container'>
+          <Paragraphs id='paragraphs-component' content={paragraphsContent} />
+        </Container>
+      </DefaultLayout>
     </>
   
   );
 }
 
-const HomeContent = {
+const HomeContent: Content = {
   pageTitle: 'Next.JS Starting Template',
-  // Component Content
-  headersContent: {
+  headingsContent: {
     text: 'Welcome!'
   },
   paragraphsContent: {
@@ -58,11 +56,13 @@ const HomeContent = {
   }
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = () => {
+  const props: Props = {
+    content: HomeContent,
+  }
+
   return {
-    props: {
-      content: HomeContent,
-    }
+    props,
   }
 }
 

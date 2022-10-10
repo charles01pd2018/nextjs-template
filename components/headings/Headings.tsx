@@ -1,30 +1,33 @@
-// partials
+// dependencies
+import classNames from 'classnames';
+// elements
 import { Text } from 'elements';
 
+
 /* TYPES */
-interface HeaderContent {
+export interface Content {
     text: string;
 }
 
-interface HeaderProps {
+export interface Props {
     id: string;
     className?: string;
-    content: HeaderContent;
+    content: Content;
 }
 
 const Header = ( { 
     id,
     className='',
-    content: {
-        text
-    }
-}: HeaderProps ) => {
+    content,
+}: Props ) => {
+    /* CONTENT */
+    const { text } = content;
 
     /* CLASSNAMES */
-    const headerClasses = `
-        headers-wrapper
-        ${className}
-    `;
+    const headerClasses = classNames(
+        'headers-wrapper',
+        className
+    );
     
     return (
         <section id={id} className={headerClasses}>
@@ -33,8 +36,10 @@ const Header = ( {
                     /* CONTENT */
                     const headerType = index + 1;
                     const headerText = `${headerType}. ${text}`;
+
                     return (
-                        <Text className={`header-${headerType}`} content={{text: headerText}} 
+                        <Text className={`header-${headerType}`} 
+                            content={{text: headerText}} 
                             Component={`h${headerType}`} />
                     );
                 } )

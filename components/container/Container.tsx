@@ -1,23 +1,26 @@
-// types
-import type { FC } from 'react';
+// dependencies
+import type { ReactNode } from 'react';
+import classNames from 'classnames';
+
 
 /* TYPES */
-interface Props {
+export interface Props {
+    children: ReactNode;
     id: string;
     className?: string;
 }
 
-const Container: FC<Props> = ( {
+const Container = ( {
     children,
     id,
     className='',
-} ) => {
-
-    const containerClasses = `
-        container-wrapper
-        container
-        ${className}
-    `;
+}: Props ) => {
+    /* CLASSNAMES */
+    const containerClasses = classNames(
+        'container-wrapper',
+        'container',
+        className
+    );
 
     return (
         <section id={id} className={containerClasses} >

@@ -1,10 +1,13 @@
+// dependencies
+import classNames from 'classnames';
+
 
 /* TYPES */
-interface Content {
+export interface Content {
     text: string;
 }
 
-interface Props {
+export interface Props {
     id: string;
     className?: string;
     content: Content;
@@ -13,23 +16,24 @@ interface Props {
 const Paragraphs = ( {
     id,
     className='',
-    content: {
-        text,
-    }
+    content,
 }: Props ) => {
-    
-    const paragraphsClasses = `
-        paragraphs-wrapper
-        ${className}
-    `;
+    /* CONTENT */
+    const { text } = content;
+
+    /* CLASSNAMES */
+    const paragraphsClasses = classNames(
+        'paragraphs-wrapper',
+        className
+    );
 
     return (
         <section id={id} className={paragraphsClasses}>
             <p>{`Regular: ${text}`}</p>
-            <p className='text-norm'>{`Text Normal: ${text}`}</p>
-            <p className='text-sm'>{`Text Small: ${text}`}</p>
-            <p className='text-xs'>{`Text Extra Small: ${text}`}</p>
-            <p className='text-xxs'>{`Text Extra Extra Small: ${text}`}</p>
+            <p className='text--norm'>{`Text Normal: ${text}`}</p>
+            <p className='text--sm'>{`Text Small: ${text}`}</p>
+            <p className='text--xs'>{`Text Extra Small: ${text}`}</p>
+            <p className='text--xxs'>{`Text Extra Extra Small: ${text}`}</p>
         </section>
     );
 }

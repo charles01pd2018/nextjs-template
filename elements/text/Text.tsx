@@ -1,12 +1,14 @@
-// types
-import type { JSXElementConstructor } from 'react';
+// dependencies
+import { JSXElementConstructor } from 'react';
+import classNames from 'classnames';
+
 
 /* TYPES */
-interface Content {
+export interface Content {
     text: string;
 }
 
-interface Props {
+export interface Props {
     className?: string;
     Component: string | JSXElementConstructor<any>;
     content: Content;
@@ -15,15 +17,16 @@ interface Props {
 const Text = ( {
     className='',
     Component,
-    content: {
-        text,
-    }
+    content,
 }: Props ) => {
+    /* CONTENT */
+    const { text } = content;
 
-    const textClasses = `
-        text-wrapper
-        ${className}
-    `;
+    /* CLASSNAMES */
+    const textClasses = classNames(
+        'text-wrapper',
+        className,
+    );
 
     return (
         <Component className={textClasses}>

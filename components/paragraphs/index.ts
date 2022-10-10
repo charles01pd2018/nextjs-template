@@ -1,3 +1,5 @@
 import Paragraphs from './Paragraphs';
 
-export default Paragraphs;
+export {
+    Paragraphs,
+};
