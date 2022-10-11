@@ -1,7 +1,7 @@
 // dependencies
 import Head from 'next/head';
 // layout
-import { DefaultLayout } from 'layout';
+import { DisplayLayout } from 'layout';
 // components
 import { Headings, Paragraphs, Container } from 'components';
 // types
@@ -33,14 +33,14 @@ const Home = ( {
       <Head>
         <title>{pageTitle}</title>
       </Head>
-      <DefaultLayout>
+      <DisplayLayout>
         <Container id='header-container'>
           <Headings id='headings-component' content={headingsContent} />
         </Container>
         <Container id='paragraphs-container' className='paragraphs-container'>
           <Paragraphs id='paragraphs-component' content={paragraphsContent} />
         </Container>
-      </DefaultLayout>
+      </DisplayLayout>
     </>
   
   );

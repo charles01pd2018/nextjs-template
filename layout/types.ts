@@ -1,1 +1,1 @@
-export * from './default/types';
+export * from './display/types';
