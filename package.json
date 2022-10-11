@@ -8,6 +8,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "preinstall": "npx only-allow yarn",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
