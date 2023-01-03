@@ -1,6 +1,6 @@
 // dependencies
 import { JSXElementConstructor } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 
 /* TYPES */
@@ -23,7 +23,7 @@ const Text = ( {
     const { text } = content;
 
     /* CLASSNAMES */
-    const textClasses = classNames(
+    const textClasses = clsx(
         'text-wrapper',
         className,
     );

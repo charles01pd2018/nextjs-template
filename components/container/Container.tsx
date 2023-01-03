@@ -1,6 +1,6 @@
 // dependencies
 import type { ReactNode } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 
 /* TYPES */
@@ -16,7 +16,7 @@ const Container = ( {
     className='',
 }: Props ) => {
     /* CLASSNAMES */
-    const containerClasses = classNames(
+    const containerClasses = clsx(
         'container-wrapper',
         'container',
         className

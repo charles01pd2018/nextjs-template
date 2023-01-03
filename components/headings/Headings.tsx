@@ -1,5 +1,5 @@
 // dependencies
-import classNames from 'classnames';
+import clsx from 'clsx';
 // elements
 import { Text } from 'elements';
 
@@ -24,7 +24,7 @@ const Header = ( {
     const { text } = content;
 
     /* CLASSNAMES */
-    const headerClasses = classNames(
+    const headerClasses = clsx(
         'headers-wrapper',
         className
     );
@@ -38,7 +38,7 @@ const Header = ( {
                     const headerText = `${headerType}. ${text}`;
 
                     return (
-                        <Text className={`header-${headerType}`} 
+                        <Text key={index} className={`header-${headerType}`} 
                             content={{text: headerText}} 
                             Component={`h${headerType}`} />
                     );

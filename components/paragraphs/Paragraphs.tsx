@@ -1,5 +1,5 @@
 // dependencies
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 
 /* TYPES */
@@ -22,7 +22,7 @@ const Paragraphs = ( {
     const { text } = content;
 
     /* CLASSNAMES */
-    const paragraphsClasses = classNames(
+    const paragraphsClasses = clsx(
         'paragraphs-wrapper',
         className
     );
