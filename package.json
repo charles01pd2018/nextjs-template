@@ -10,7 +10,8 @@
     "start": "next start",
     "preinstall": "npx only-allow yarn",
     "type-check": "tsc --noEmit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format-all": "prettier --write ."
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
