@@ -1,32 +1,12 @@
-// dependencies
-import type { ReactNode } from 'react';
-import clsx from 'clsx';
+import { type ReactNode } from "react";
+import styles from "./Container.module.scss";
 
-
-/* TYPES */
 export interface Props {
-    children: ReactNode;
-    id: string;
-    className?: string;
+  children: ReactNode;
 }
 
-const Container = ( {
-    children,
-    id,
-    className='',
-}: Props ) => {
-    /* CLASSNAMES */
-    const containerClasses = clsx(
-        'container-wrapper',
-        'container',
-        className
-    );
-
-    return (
-        <section id={id} className={containerClasses} >
-            {children}
-        </section>
-    )
-}
+const Container = ({ children }: Props) => {
+  return <section className={styles.containerWrapper}>{children}</section>;
+};
 
 export default Container;
