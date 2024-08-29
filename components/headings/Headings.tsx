@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { Text } from "elements";
 import styles from "./Headings.module.scss";
 
@@ -7,20 +6,16 @@ export interface Content {
 }
 
 export interface Props {
-  id: string;
-  className?: string;
   content: Content;
 }
 
-const Header = ({ id, className = "", content }: Props) => {
+const Header = ({ content }: Props) => {
   const { text } = content;
-
-  const headerClasses = clsx("headers-wrapper", className);
+  var word = "";
 
   return (
-    <section id={id} className={styles.headersWrapper}>
+    <section className={styles.headers}>
       {[...Array(6)].map((_, index) => {
-        /* CONTENT */
         const headerType = index + 1;
         const headerText = `${headerType}. ${text}`;
 
