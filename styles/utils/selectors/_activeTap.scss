@@ -1,12 +1,11 @@
-@use './tap' as *;
-
+@use "./tap" as *;
 
 @mixin activeTap {
-    &.active {
-        @content;
-    }
+  &.active {
+    @content;
+  }
 
-    @include tap {
-        @content;
-    }
+  @include tap {
+    @content;
+  }
 }

@@ -1,7 +1,6 @@
-import type { Props as ParagraphsProps,
-    Content as ParagraphsContent } from './Paragraphs';
+import type {
+  Props as ParagraphsProps,
+  Content as ParagraphsContent,
+} from "./Paragraphs";
 
-export type {
-    ParagraphsContent,
-    ParagraphsProps,
-}
+export type { ParagraphsContent, ParagraphsProps };

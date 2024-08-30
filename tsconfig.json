@@ -23,17 +23,9 @@
       "@layout/*": ["layout/*"],
       "@db/*": ["db/*"],
       "@lib/*": ["lib/*"],
-      "@types/*": ["types/*"],
+      "@types/*": ["types/*"]
     }
   },
-  "include": [
-    "next-env.d.ts", 
-    "**/*.d.ts", 
-    "**/*.ts", 
-    "**/*.tsx", 
-    "**/*.js"
- ],
-  "exclude": [
-    "node_modules",
-  ]
+  "include": ["next-env.d.ts", "**/*.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
+  "exclude": ["node_modules"]
 }

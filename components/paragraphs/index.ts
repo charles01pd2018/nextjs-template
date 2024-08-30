@@ -1,5 +1,3 @@
-import Paragraphs from './Paragraphs';
+import Paragraphs from "./Paragraphs";
 
-export {
-    Paragraphs,
-};
+export { Paragraphs };

@@ -2,86 +2,86 @@
 # Elements
 --------------------------------------------------------------*/
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
-    display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
 }
-  
+
 object {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 button {
-    cursor: pointer;
-    color: black;
+  cursor: pointer;
+  color: black;
 
-    &:disabled {
-        pointer-events: none;
-        color: inherit;
-    }
+  &:disabled {
+    pointer-events: none;
+    color: inherit;
+  }
 }
 
 abbr {
-    border: none;
-    text-decoration: none;
+  border: none;
+  text-decoration: none;
 }
 
 p {
-    margin: 0;
-    line-height: 30px;
+  margin: 0;
+  line-height: 30px;
 }
 
 ul,
 ol {
-    padding: 0;
-    margin: 0;
-    
-    li {
-        margin-block: 1rem;
-    }
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-block: 1rem;
+  }
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
-[ contenteditable="true" ] {
-    cursor: text;
-    white-space: pre-line;
+[contenteditable="true"] {
+  cursor: text;
+  white-space: pre-line;
 
-    &:active,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &:empty {
+    &:before {
+      content: attr(placeholder);
+      color: gray;
+    }
+
     &:focus {
-        outline: none;
+      &:before {
+        content: "";
+      }
     }
-
-    &:empty {
-        &:before {
-            content: attr( placeholder );
-            color: gray;
-        }
-        
-        &:focus {
-            &:before {
-                content: '';
-            }
-        }
-    }
+  }
 }
 
 hr {
-    margin: 0;
+  margin: 0;
 }
 
 address {
-    font-style: normal;
+  font-style: normal;
 }
 
 iframe {
-    border: none;
+  border: none;
 }
 
 /*--------------------------------------------------------------
@@ -93,44 +93,44 @@ optgroup,
 select,
 textarea,
 fieldset {
-    font-family: inherit;
-    font-size: 100%; 
-    border: none;
-    background: none;
+  font-family: inherit;
+  font-size: 100%;
+  border: none;
+  background: none;
 }
 
 label {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input {
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
 fieldset,
 legend {
-    padding: 0;
+  padding: 0;
 }
 
-input[ type='search' ],
-input[ type='checkbox' ],
-input[ type='radio' ],
-input[ type='range' ],
+input[type="search"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
 select {
-    appearance: none;
+  appearance: none;
 }
 
-input[ type='checkbox' ],
-input[ type='radio' ],
-input[ type='range' ] {
-    cursor: pointer;
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"] {
+  cursor: pointer;
 }
 
-input[ type='file' ],
-input[type=file]::-webkit-file-upload-button {
-    padding: 0;
-    opacity: 0;
-    cursor: pointer;
+input[type="file"],
+input[type="file"]::-webkit-file-upload-button {
+  padding: 0;
+  opacity: 0;
+  cursor: pointer;
 }

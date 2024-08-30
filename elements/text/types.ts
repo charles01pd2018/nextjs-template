@@ -1,7 +1,3 @@
-import type { Props as TextProps,
-    Content as TextContent } from './Text';
+import type { Props as TextProps, Content as TextContent } from "./Text";
 
-export type {
-    TextContent,
-    TextProps,
-}
+export type { TextContent, TextProps };

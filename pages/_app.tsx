@@ -1,23 +1,16 @@
 // dependencies
-import { useEffect } from 'react';
+import { useEffect } from "react";
 // types
-import type { AppProps } from 'next/app';
+import type { AppProps } from "next/app";
 // styles
-import 'styles/styles.scss';
+import "styles/styles.scss";
 
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  useEffect(() => {
+    document.body.classList?.remove("loading");
+  }, []);
 
-const MyApp = ( { 
-  Component, 
-  pageProps 
-}: AppProps ) => {
-
-  useEffect( () => {
-    document.body.classList?.remove('loading')
-  }, [] );
-
-  return (
-    <Component {...pageProps} />
-  );
-}
+  return <Component {...pageProps} />;
+};
 
 export default MyApp;

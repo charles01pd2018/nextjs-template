@@ -1,15 +1,15 @@
 // dependencies
-@use 'sass:map';
+@use "sass:map";
 // colors
-@use '../constants/colors' as *;
+@use "../constants/colors" as *;
 
 /*--------------------------------------------------------------
 # Variables
 --------------------------------------------------------------*/
-$scrollbar--width:                  0.8rem;
-$scrollbar-thumb--color:            map.get( $colors, 'green', 3 );
-$scrollbar--background-color:       map.get( $colors, 'green', 1 );
-$scroll-bar-thumb--border-radius:   20px;
+$scrollbar--width: 0.8rem;
+$scrollbar-thumb--color: map.get($colors, "green", 3);
+$scrollbar--background-color: map.get($colors, "green", 1);
+$scroll-bar-thumb--border-radius: 20px;
 
 /*--------------------------------------------------------------
 # Styling
@@ -18,15 +18,15 @@ $scroll-bar-thumb--border-radius:   20px;
 --------------------------------------------------------------*/
 /* CHROME, EDGE, SAFARI */
 body::-webkit-scrollbar {
-    width: $scrollbar--width; // width of the ENTIRE scrollbar - including thumb
+  width: $scrollbar--width; // width of the ENTIRE scrollbar - including thumb
 }
 
 body::-webkit-scrollbar-track {
-    background: $scrollbar--background-color; // background color of the scroll bar
+  background: $scrollbar--background-color; // background color of the scroll bar
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: $scrollbar-thumb--color; // color of the scroll thumb
-    border-radius: $scroll-bar-thumb--border-radius; // roundness of the scroll thumb
-    // border: 1px solid orange; // border of the scroll thumb
+  background-color: $scrollbar-thumb--color; // color of the scroll thumb
+  border-radius: $scroll-bar-thumb--border-radius; // roundness of the scroll thumb
+  // border: 1px solid orange; // border of the scroll thumb
 }

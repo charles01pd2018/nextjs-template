@@ -1,5 +1,3 @@
-import DisplayLayout from './DisplayLayout';
+import DisplayLayout from "./DisplayLayout";
 
-export {
-    DisplayLayout,
-}
+export { DisplayLayout };

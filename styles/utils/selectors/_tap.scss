@@ -1,9 +1,9 @@
 // includes both the mouse over and focus state
 // focus state is for mobile devices and tab focused elements
 @mixin tap {
-    &:hover,
-    &:focus,
-    &:active {
-        @content;
-    }
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
 }

@@ -1,5 +1,3 @@
-import Headings from './Headings';
+import Headings from "./Headings";
 
-export {
-    Headings,
-};
+export { Headings };

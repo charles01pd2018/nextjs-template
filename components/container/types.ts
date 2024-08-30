@@ -1,5 +1,3 @@
-import type { Props as ContainerProps } from './Container';
+import type { Props as ContainerProps } from "./Container";
 
-export type {
-    ContainerProps,
-}
+export type { ContainerProps };

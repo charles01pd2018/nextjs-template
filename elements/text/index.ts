@@ -1,5 +1,3 @@
-import Text from './Text';
+import Text from "./Text";
 
-export {
-    Text,
-}
+export { Text };
