@@ -1,7 +1,6 @@
-@use 'styles/constants/breakpoints' as *;
+@use "styles/constants/breakpoints" as *;
 
-
-.headersWrapper {
+.headings {
   text-align: center;
 
   @media (max-width: $breakpoint--large) {

@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "styles/constants/colors" as *;
 
-.containerWrapper {
+.container {
   border: 3px solid map.get($colors, "brand-blue", 4);
 
   &.paragraphs-container {

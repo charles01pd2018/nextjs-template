@@ -1,5 +1,5 @@
 import { Text } from "elements";
-import styles from "./Headings.module.scss";
+import styles from "./_Headings.module.scss";
 
 export interface Content {
   text: string;
@@ -11,10 +11,9 @@ export interface Props {
 
 const Header = ({ content }: Props) => {
   const { text } = content;
-  var word = "";
 
   return (
-    <section className={styles.headers}>
+    <section className={styles.headings}>
       {[...Array(6)].map((_, index) => {
         const headerType = index + 1;
         const headerText = `${headerType}. ${text}`;
