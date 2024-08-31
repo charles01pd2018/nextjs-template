@@ -4,8 +4,6 @@
 .container {
   border: 3px solid map.get($colors, "brand-blue", 4);
 
-  border: 1px solid red;
-
   &.paragraphs-container {
     border-color: map.get($colors, "green", 4);
     border-width: 5px;

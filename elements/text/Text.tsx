@@ -1,26 +1,19 @@
-// dependencies
-import { JSXElementConstructor } from "react";
-import clsx from "clsx";
+import { type JSXElementConstructor } from "react";
+import type { ElementProps } from "elements/types";
 
-/* TYPES */
 export interface Content {
   text: string;
 }
 
-export interface Props {
-  className?: string;
+export interface Props extends ElementProps {
   Component: string | JSXElementConstructor<any>;
   content: Content;
 }
 
-const Text = ({ className = "", Component, content }: Props) => {
-  /* CONTENT */
+const Text = ({ className, Component, content }: Props) => {
   const { text } = content;
 
-  /* CLASSNAMES */
-  const textClasses = clsx("text-wrapper", className);
-
-  return <Component className={textClasses}>{text}</Component>;
+  return <Component className={className}>{text}</Component>;
 };
 
 export default Text;

@@ -1,18 +1,20 @@
+import clsx from "clsx";
+import type { ComponentProps } from "components/types";
 import styles from "./_Paragraphs.module.scss";
 
 export interface Content {
   text: string;
 }
 
-export interface Props {
+export interface Props extends ComponentProps {
   content: Content;
 }
 
-const Paragraphs = ({ content }: Props) => {
+const Paragraphs = ({ id, className, content }: Props) => {
   const { text } = content;
 
   return (
-    <section className={styles.paragraphs}>
+    <section id={id} className={clsx(styles.paragraphs, className)}>
       <p>{`Regular: ${text}`}</p>
       <p className="text--norm">{`Text Normal: ${text}`}</p>
       <p className="text--sm">{`Text Small: ${text}`}</p>

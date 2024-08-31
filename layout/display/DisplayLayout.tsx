@@ -1,13 +1,30 @@
-// dependencies
-import { ReactNode } from "react";
+import type { LayoutProps } from "layout/types";
+import { Headings, Paragraphs, Container } from "components";
+import type { HeadingsContent, ParagraphsContent } from "components/types";
+import styles from "./_DisplayLayout.module.scss";
 
-/* TYPES */
-export interface Props {
-  children: ReactNode;
+export interface Content {
+  headingsContent: HeadingsContent;
+  paragraphsContent: ParagraphsContent;
 }
 
-const DisplayLayout = ({ children }: Props) => {
-  return <main className="display-layout container">{children}</main>;
+export interface Props extends LayoutProps {
+  content: Content;
+}
+
+const DisplayLayout = ({ content }: Props) => {
+  const { headingsContent, paragraphsContent } = content;
+
+  return (
+    <main className={styles.displayLayout}>
+      <Container id="header-container">
+        <Headings id="headings-component" content={headingsContent} />
+      </Container>
+      <Container id="paragraphs-container" className="paragraphs-container">
+        <Paragraphs id="paragraphs-component" content={paragraphsContent} />
+      </Container>
+    </main>
+  );
 };
 
 export default DisplayLayout;

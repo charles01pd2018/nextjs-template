@@ -1,14 +1,9 @@
-// dependencies
 import Head from "next/head";
-// layout
 import { DisplayLayout } from "layout";
-// components
 import { Headings, Paragraphs, Container } from "components";
-// types
 import type { HeadingsContent, ParagraphsContent } from "components/types";
 import type { GetStaticProps } from "next";
 
-/* TYPES */
 interface Content {
   pageTitle: string;
   headingsContent: HeadingsContent;
@@ -20,22 +15,14 @@ interface Props {
 }
 
 const Home = ({ content }: Props) => {
-  /* CONTENT */
-  const { pageTitle, headingsContent, paragraphsContent } = content;
+  const { pageTitle, ...layoutContent } = content;
 
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
       </Head>
-      <DisplayLayout>
-        <Container id="header-container">
-          <Headings id="headings-component" content={headingsContent} />
-        </Container>
-        <Container id="paragraphs-container" className="paragraphs-container">
-          <Paragraphs id="paragraphs-component" content={paragraphsContent} />
-        </Container>
-      </DisplayLayout>
+      <DisplayLayout content={layoutContent} />
     </>
   );
 };
