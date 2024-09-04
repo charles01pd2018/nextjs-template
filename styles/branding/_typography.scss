@@ -29,4 +29,5 @@ p {
 
   font-size: clamp($min, $default, $max);
   line-height: 120%;
+  margin-block: 0.5rem;
 }
