@@ -1,13 +1,10 @@
 import Head from "next/head";
 import { DisplayLayout } from "layout";
-import { Headings, Paragraphs, Container } from "components";
-import type { HeadingsContent, ParagraphsContent } from "components/types";
+import type { DisplayLayoutContent } from "layout/types";
 import type { GetStaticProps } from "next";
 
-interface Content {
+interface Content extends DisplayLayoutContent {
   pageTitle: string;
-  headingsContent: HeadingsContent;
-  paragraphsContent: ParagraphsContent;
 }
 
 interface Props {

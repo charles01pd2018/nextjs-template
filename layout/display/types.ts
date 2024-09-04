@@ -1,3 +1,6 @@
-import type { Props as DisplayLayoutProps } from "./DisplayLayout";
+import type {
+  Props as DisplayLayoutProps,
+  Content as DisplayLayoutContent,
+} from "./DisplayLayout";
 
-export type { DisplayLayoutProps };
+export type { DisplayLayoutProps, DisplayLayoutContent };

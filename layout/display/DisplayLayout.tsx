@@ -17,11 +17,11 @@ const DisplayLayout = ({ content }: Props) => {
 
   return (
     <main className={styles.displayLayout}>
-      <Container id="header-container">
-        <Headings id="headings-component" content={headingsContent} />
+      <Container>
+        <Headings content={headingsContent} />
       </Container>
-      <Container id="paragraphs-container" className="paragraphs-container">
-        <Paragraphs id="paragraphs-component" content={paragraphsContent} />
+      <Container className={styles.paragraphs}>
+        <Paragraphs content={paragraphsContent} />
       </Container>
     </main>
   );

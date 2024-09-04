@@ -1,0 +1,47 @@
+@use "sass:list";
+@use "sass:math";
+@use "styles/constants/typography" as *;
+
+$class-header-size: $h1-size;
+@each $header-tag in $header-tags {
+  $min: list.nth($class-header-size, 1);
+  $default: list.nth($class-header-size, 2);
+  $max: list.nth($class-header-size, 3);
+
+  $font-size: clamp($min, $default, $max);
+
+  .#{$header-tag} {
+    font-size: $font-size;
+  }
+
+  $class-header-size: (
+    $min * $header-scale,
+    $default * $header-scale,
+    $max * $header-scale
+  );
+}
+
+$text-classnames: ("xlg", "lg", "norm", "sm", "xs", "xxs", "xxxs");
+// how much each subsequent text classname will decrease in size
+$text-scale: 0.95;
+
+$text-size: (
+  list.nth($paragraph-size, 1) * math.pow((2.04 - $text-scale), 2),
+  list.nth($paragraph-size, 2) * math.pow((2.04 - $text-scale), 2),
+  list.nth($paragraph-size, 3) * math.pow((2.04 - $text-scale), 2)
+);
+@each $text-class in $text-classnames {
+  $min: list.nth($text-size, 1);
+  $default: list.nth($text-size, 2);
+  $max: list.nth($text-size, 3);
+
+  .#{$text-class} {
+    font-size: clamp($min, $default, $max);
+  }
+
+  $text-size: ($min * $text-scale, $default * $text-scale, $max * $text-scale);
+}
+
+.weakHeading {
+  font-weight: normal;
+}

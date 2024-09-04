@@ -1,5 +1,5 @@
-import { Text } from "elements";
 import clsx from "clsx";
+import { Text } from "elements";
 import type { ComponentProps } from "components/types";
 import styles from "./_Headings.module.scss";
 
