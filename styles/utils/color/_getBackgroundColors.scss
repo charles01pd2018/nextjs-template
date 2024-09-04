@@ -1,7 +1,5 @@
-// dependencies
 @use "sass:map";
-// constants
-@use "../../constants/colors" as *;
+@use "styles/constants/colors" as *;
 
 @mixin getBackgroundColors($color-shade: 1) {
   @each $color, $color-map in $colors {
