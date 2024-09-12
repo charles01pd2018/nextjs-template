@@ -1,3 +1,13 @@
+@use "styles/constants/breakpoints" as *;
+
+.containerWide {
+  margin: clamp(1.5rem, 4.5vh, 3rem) clamp(0.8rem, 2vw, 2rem);
+}
+
 .container {
-  padding: clamp(1.5rem, 4.5vh, 3rem) clamp(0.8rem, 2vw, 2rem);
+  margin: clamp(1.5rem, 4.5vh, 3rem) clamp(2rem, 15vw, 30rem);
+
+  @media (max-width: $breakpoint--small) {
+    margin-inline: 1.3rem;
+  }
 }
