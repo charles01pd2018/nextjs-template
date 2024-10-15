@@ -11,8 +11,12 @@ object {
 }
 
 button {
+  display: flex;
   cursor: pointer;
   color: inherit;
+  background: none;
+  border: none;
+  outline: none;
 
   &:disabled {
     pointer-events: none;
